@@ -1,0 +1,23 @@
+
+
+<ion-view view-title="" hide-nav-bar="true" ng-controller="CiCtrl">
+  <style>
+  </style>
+  <ion-header-bar align-title="center" class="bar bar-header bar-positive">
+    <h1 class="title">诗词文</h1>
+  </ion-header-bar>
+
+  <ion-content>
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()">
+    </ion-refresher>
+    <div class="list">
+      <a class="item" ng-click="showCon(x.id)" ng-repeat="x in data">
+        <h2>{{x.name}}</h2>
+        <p style="color: #808080;">{{x.poe}}</p>
+      </a>
+
+    </div>
+
+  </ion-content>
+
+</ion-view>

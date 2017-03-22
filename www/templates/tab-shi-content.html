@@ -1,0 +1,28 @@
+<ion-view view-title="" hide-nav-bar="true" hide-tabs="true" ng-controller="ShiConCtrl">
+  <style>
+    .imgs{
+      width: 1.3rem;
+      height: 1.3rem;
+      margin-left: 0.4rem;
+      float: left;
+    }
+  </style>
+  <div class="bar bar-header bar-positive">
+    <button class="button icon ion-chevron-left" style="border: none" ng-click="huotui()"></button>
+      <h1 class="title">诗</h1>
+    <button class="button icon ion-android-more-vertical" style="border: none" ng-click="shows()"></button>
+  </div>
+  <div class="bar bar-subheader">
+    <h2 class="title">{{data.listId}}</h2>
+  </div>
+  <ion-content class="has-subheader">
+
+    <div style="height: 0.3rem"></div>
+    <div style="width: 100%;">
+      <div style="width: 7rem;height: auto;text-align: center;margin: 0 auto;letter-spacing: 0.05rem;" ng-model="con">
+              {{data.poetry}}
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>

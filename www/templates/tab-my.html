@@ -1,0 +1,117 @@
+<ion-view view-title=""  hide-nav-bar="true" ng-controller="MyCtrl" >
+  <style>
+  	.imgs{
+      width: 1.3rem;
+      height: 1.3rem;
+      margin-left: 0.4rem;
+      float: left;
+    }
+  </style>
+  <ion-header-bar class="bar bar-header bar-positive" align-title="center">
+    <h1 class="title">诗词文</h1>
+  </ion-header-bar>
+  <ion-content style="background: #ccc">
+
+    <div class="list">
+      <div class="item item-avatar row" style="margin-top: 0.6rem;">
+      <a class="col col-20" style="float: left">
+        <img src="../img/icon_parent_default.png"style="height: 1.9rem;width: 1.9rem">
+      </a>
+        <h2 class="col col-25" style="float: left;line-height: 1.9rem;font-size: 0.55rem">游客</h2>
+        <span class="cor col-33"></span>
+        <h2 class="col col-13" style="float: right;line-height: 1.9rem;font-size: 0.55rem">登录
+          <p class="icon ion-ios-arrow-forward" style="float: right;line-height: 1.9rem;font-size: 0.55rem;"></p>
+        </h2>
+      </div>
+      <div class="item" style="margin-top: 0.6rem;">
+        <div class="col col-10"></div>
+        <a class="col col-20" style="float: left" >
+          <img src="../img/setting_09.png"style="height: 0.95rem;width: 0.96rem;float: left;">
+        </a>
+        <h2 class="col col-60" style="float: left;line-height: 0.95rem;font-size: 0.55rem">扫描二维码
+        </h2>
+        <p class="icon ion-ios-arrow-forward" style="float: right;line-height: 0.95rem;font-size: 0.55rem;"></p>
+
+      </div>
+      <div class="item" style="margin-top: 0.6rem;">
+        <div class="col col-10"></div>
+        <a class="col col-20" style="float: left" >
+          <img src="../img/setting_01.png"style="height: 0.95rem;width: 0.96rem;float: left;">
+        </a>
+        <h2 class="col col-60" style="float: left;line-height: 0.95rem;font-size: 0.55rem">我的收藏
+        </h2>
+        <p class="icon ion-ios-arrow-forward" style="float: right;line-height: 0.95rem;font-size: 0.55rem;"></p>
+
+      </div>
+      <div class="item">
+        <div class="col col-10"></div>
+        <a class="col col-20" style="float: left" >
+          <img src="../img/setting_02.png"style="height: 0.95rem;width: 0.96rem;float: left;">
+        </a>
+        <h2 class="col col-60" style="float: left;line-height: 0.95rem;font-size: 0.55rem">我的推荐
+        </h2>
+        <p class="icon ion-ios-arrow-forward" style="float: right;line-height: 0.95rem;font-size: 0.55rem;"></p>
+
+      </div>
+
+      <div class="item" style="margin-top: 0.6rem;">
+        <div class="col col-10"></div>
+        <a class="col col-20" style="float: left" >
+          <img src="../img/setting_07.png"style="height: 0.95rem;width: 0.96rem;float: left;">
+        </a>
+        <h2 class="col col-60" style="float: left;line-height: 0.95rem;font-size: 0.55rem">版本升级
+        </h2>
+        <p class="icon ion-ios-arrow-forward" style="float: right;line-height: 0.95rem;font-size: 0.55rem;"></p>
+
+      </div>
+      <div class="item" ng-click="shows()">
+        <div class="col col-10"></div>
+        <a class="col col-20" style="float: left" >
+          <img src="../img/setting_06.png"style="height: 0.95rem;width: 0.96rem;float: left;">
+        </a>
+        <h2 class="col col-60" style="float: left;line-height: 0.95rem;font-size: 0.55rem" >推荐好友
+        </h2>
+        <p class="icon ion-ios-arrow-forward" style="float: right;line-height: 0.95rem;font-size: 0.55rem;"></p>
+      </div>
+      <div class="item" style="margin-top: 0.6rem;" ng-click="modal.show()">
+        <div class="col col-10"></div>
+        <a class="col col-20" style="float: left" >
+          <img src="../img/setting_05.png"style="height: 0.95rem;width: 0.96rem;float: left;">
+        </a>
+        <h2 class="col col-60" style="float: left;line-height: 0.95rem;font-size: 0.55rem">意见反馈
+        </h2>
+        <p class="icon ion-ios-arrow-forward" style="float: right;line-height: 0.95rem;font-size: 0.55rem;"></p>
+      </div>
+      <div class="item">
+        <div class="col col-10"></div>
+        <a class="col col-20" style="float: left" >
+          <img src="../img/setting_04.png"style="height: 0.95rem;width: 0.96rem;float: left;">
+        </a>
+        <h2 class="col col-60" style="float: left;line-height: 0.95rem;font-size: 0.55rem">关于我们
+        </h2>
+        <p class="icon ion-ios-arrow-forward" style="float: right;line-height: 0.95rem;font-size: 0.55rem;"></p>
+      </div>
+    </div>
+  </ion-content>
+
+  <script id="templates/modal.html" type="text/ng-template">
+    <div id="task-view" class="modal slide-in-up">
+
+      <div class="bar bar-header bar-positive">
+        <button class="button icon ion-ios-arrow-back" style="border: none" ng-click="close()"></button>
+        <h1 class="title">意见反馈</h1>
+        <button class="button" style="border: none" ng-click="tj()">提交</button>
+      </div>
+      <div class="padding has-header" style="width:92%; height: 6rem; overflow: hidden; border:1px solid #ccc; margin:18% 4% 5%;">
+        <textarea  placeholder="请输入文字" rows="11" cols="50" maxlength="300" ng-model = "textreaValue"></textarea>
+      </div>
+      <p style="text-align:right; margin-right: 20px; color:red">300</p>
+      <div class="row">
+        <div class="col col-33"></div>
+        <div class="col col-33">
+        </div>
+        <div class="col col-33"></div>
+      </div>
+    </div>
+  </script>
+</ion-view>
